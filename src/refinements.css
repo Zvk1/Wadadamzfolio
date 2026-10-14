@@ -383,15 +383,12 @@ aside > .eyebrow:first-child { margin-top: 0; }
   position: relative; width: 100%; max-width: 220px; height: auto; aspect-ratio: 1;
   margin: 0 0 16px; border: 0; border-radius: 0; background: transparent; overflow: visible;
 }
-.profile-summary > h2 { margin: 0 0 8px; }
+.profile-summary > h2 { margin: 0 0 10px; font-size: 25px; line-height: 1.2; letter-spacing: -.65px; text-wrap: balance; }
 .profile-summary > .profile-role, .profile-summary > .sidebar-bio {
   font: 400 14px/1.6 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none;
 }
-.profile-summary > .profile-role { color: var(--accent); margin: 0 0 10px; }
-.profile-summary > .sidebar-bio { color: var(--muted); margin: 0 0 28px; }
-.portrait-motion { display: none; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.portrait-tracking .portrait-motion { display: block; }
-.portrait-tracking #profile-photo { opacity: 0; }
+.profile-summary > .profile-role { color: var(--accent); margin: 0 0 14px; text-wrap: balance; }
+.profile-summary > .sidebar-bio { color: var(--muted); margin: 0 0 28px; max-width: 28ch; text-wrap: pretty; }
 @media (max-height: 800px) and (min-width: 651px) {
   .profile-summary .profile-picture { max-width: 156px; margin-bottom: 12px; }
 }
@@ -406,8 +403,4 @@ aside > .eyebrow:first-child { margin-top: 0; }
 @media (max-width: 380px) {
   .profile-summary { grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; }
   .profile-summary .profile-picture { width: 76px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .portrait-tracking .portrait-motion { display: none; }
-  .portrait-tracking #profile-photo { opacity: 1; }
 }

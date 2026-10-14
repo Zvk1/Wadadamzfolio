@@ -84,12 +84,12 @@ async function applyTheme(animate = false) {
 function closeMenu(restoreFocus = false) {
   menu.hidden = true;
   trigger.setAttribute('aria-expanded', 'false');
-  if (restoreFocus) trigger.focus();
+  if (restoreFocus) trigger.focus({ preventScroll: true });
 }
 function openMenu(index = options.findIndex(option => option.dataset.themeOption === preference)) {
   menu.hidden = false;
   trigger.setAttribute('aria-expanded', 'true');
-  options[index].focus();
+  options[index].focus({ preventScroll: true });
 }
 options.forEach(option => {
   option.querySelector('.option-icon').innerHTML = icon(option.dataset.themeOption);
@@ -114,11 +114,11 @@ menu.addEventListener('keydown', event => {
   if (event.key === 'ArrowUp') next = (current - 1 + options.length) % options.length;
   if (event.key === 'Home') next = 0;
   if (event.key === 'End') next = options.length - 1;
-  if (next !== undefined) { event.preventDefault(); options[next].focus(); }
+  if (next !== undefined) { event.preventDefault(); options[next].focus({ preventScroll: true }); }
   if (event.key === 'Escape') { event.preventDefault(); closeMenu(true); }
   if (event.key === 'Tab') { closeMenu(true); }
   const match = options.find(option => option.dataset.themeOption.startsWith(event.key.toLowerCase()));
-  if (event.key.length === 1 && match) { event.preventDefault(); match.focus(); }
+  if (event.key.length === 1 && match) { event.preventDefault(); match.focus({ preventScroll: true }); }
 });
 document.addEventListener('pointerdown', event => {
   if (!picker.contains(event.target)) closeMenu();

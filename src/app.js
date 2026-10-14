@@ -48,11 +48,16 @@ function openUrl(url,label) {
 document.querySelectorAll('[data-link]').forEach(el => {
   const key = el.dataset.link;
   const href = linkHref(p.links[key], key === 'email' ? 'email' : 'web', location.href);
-  if (!href) { el.hidden = true; return; }
+  if (!href) {
+    el.hidden = !el.hasAttribute('data-placeholder');
+    if (!el.hidden) el.disabled = true;
+    return;
+  }
   const anchor = document.createElement('a');
   anchor.className = el.className;
   anchor.dataset.link = key;
   anchor.innerHTML = el.innerHTML;
+  anchor.querySelector('.action-note')?.remove();
   anchor.href = href;
   if (key === 'email') anchor.firstChild.textContent = p.links.email + ' ';
   else { anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; }

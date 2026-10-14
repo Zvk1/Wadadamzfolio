@@ -18,7 +18,7 @@ Reviewed October 15, 2026 against the supplied `anti-generic-ui-ux-design.md`.
 ## Verification
 
 - Production build passes.
-- All 13 automated checks pass: existing navigation, route geometry and theme transition tests, plus new link validation, CSS variable resolution, navigation/ARIA target and portrait asset checks.
+- All 14 automated checks pass: existing navigation, route geometry and theme transition tests, plus new link validation, CSS variable resolution, navigation/ARIA target and portrait asset checks.
 - Both theme palettes pass WCAG AA's 4.5:1 contrast threshold for normal text in the tested primary, muted, accent, terminal and primary-button color combinations. This is a palette check, not a claim of full accessibility conformance.
 - Stylesheet and JavaScript syntax are validated by the build; `git diff --check` passes.
 - Browser visual and interaction review is blocked: both browser-control and Windows Computer Use tools failed to start their Node runtime with “The system cannot find the path specified.” Responsive layout, portrait rendering, keyboard navigation and theme changes still need an actual browser pass.

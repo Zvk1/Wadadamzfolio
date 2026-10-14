@@ -44,4 +44,4 @@ Fonts use Google Fonts with local fallbacks. Dependencies are locked in `package
 
 ## Verification
 
-Build and all 13 checks pass, covering palette contrast, link validation, design tokens, document targets, assets, navigation, pipeline geometry and theme transitions. Run `node --test tests/*.test.js`. Browser/device visual QA is pending because the browser-control runtime could not start. See [DESIGN-REVIEW.md](DESIGN-REVIEW.md) for the changes, evidence and remaining verification limits.
+Build and all 14 checks pass, covering palette contrast, link validation, design tokens, document targets, assets, navigation, pipeline geometry and theme transitions. Run `node --test tests/*.test.js`. Browser/device visual QA is pending because the browser-control runtime could not start. See [DESIGN-REVIEW.md](DESIGN-REVIEW.md) for the changes, evidence and remaining verification limits.

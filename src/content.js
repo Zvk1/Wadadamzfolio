@@ -1,6 +1,7 @@
 // Edit this file to personalize the portfolio. Empty URLs stay as clear placeholders.
 window.PORTFOLIO = {
   name: 'Your Name', availability: 'Open to internships',
+  photo: '', // Example: '/profile.jpg' (place the image in public/).
   links: { github: '', linkedin: '', resume: '', email: '', other: '' },
   projects: [
     { title: 'Network traffic analyzer', category: 'SCHOOL PROJECT', number: '01', visual: 'network', description: 'Example project · A tool for exploring packet captures and identifying unusual network behavior.', tags: ['Python', 'Wireshark', 'Networking'], role: '[Your role and contribution]', learning: '[Explain your approach, what you tested, and what you learned.]', url: '' },

@@ -3,7 +3,19 @@ const p = window.PORTFOLIO;
 const escapeHtml = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 document.querySelectorAll('[data-name]').forEach(el=>el.textContent=p.name);
 document.querySelector('[data-availability]').textContent=p.availability;
-document.querySelector('.monogram').firstChild.textContent=p.name.split(' ').map(x=>x[0]).slice(0,2).join('');
+const profilePhoto = document.getElementById('profile-photo');
+if (p.photo) {
+  profilePhoto.alt = `Portrait of ${p.name}`;
+  profilePhoto.addEventListener('load', () => {
+    profilePhoto.hidden = false;
+    document.getElementById('photo-placeholder').hidden = true;
+  });
+  profilePhoto.addEventListener('error', () => {
+    profilePhoto.hidden = true;
+    document.getElementById('photo-placeholder').hidden = false;
+  });
+  profilePhoto.src = p.photo;
+}
 document.title=p.name+' — Cybersecurity & Computer Engineering';
 document.getElementById('year').textContent=new Date().getFullYear();
 const visuals={network:'<path d="M20 22L70 22L45 68Z"/><path d="M20 22L20 68L70 68L70 22M20 68L45 45L70 68"/><circle cx="20" cy="22" r="6"/><circle cx="70" cy="22" r="6"/><circle cx="45" cy="45" r="6"/><circle cx="20" cy="68" r="6"/><circle cx="70" cy="68" r="6"/>',chip:'<rect x="25" y="25" width="40" height="40" rx="3"/><rect x="34" y="34" width="22" height="22"/><path d="M33 15V25M45 15V25M57 15V25M33 65V75M45 65V75M57 65V75M15 33H25M15 45H25M15 57H25M65 33H75M65 45H75M65 57H75"/>',terminal:'<rect x="10" y="20" width="70" height="51" rx="4"/><path d="M10 32H80M22 44L31 51L22 58M39 59H57"/><circle cx="18" cy="26" r="1"/><circle cx="24" cy="26" r="1"/>'};
@@ -23,3 +35,5 @@ import './motion.js';
 
 import './theme.js';
 import './navigation.js';
+
+import './pipeline.js';

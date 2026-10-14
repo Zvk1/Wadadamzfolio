@@ -26,7 +26,7 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 - `src/navigation.js`: section navigation; regression checks run with `node --test tests/navigation.test.js`.
 - `public/`: static files such as `resume.pdf`; set the resume link to `/resume.pdf`.
 
-Keep URLs empty until real links are ready. All example projects and credentials are placeholders, not claims about you. Dark is the default for new visitors. The custom Auto/Light/Dark menu remembers your preference; Auto follows your device. Theme changes fade smoothly, with reduced-motion support. Use arrow keys to navigate the menu, Enter to select, and Escape to close. The icon-only pause/play control also persists locally. Clicking or tapping briefly boosts the data lines; paused motion and device reduced-motion preferences disable the boost. Numbered sections have viewport-sized spacing, and navigation tracks the reading position through Contact.
+Keep URLs empty until real links are ready. All example projects and credentials are placeholders, not claims about you. Dark is the default for new visitors. The compact Auto/Light/Dark selector remembers your preference; Auto follows your device. The icon-only pause/play control also persists locally. Clicking or tapping briefly boosts the data lines; paused motion and device reduced-motion preferences disable the boost. Numbered sections have viewport-sized spacing, and navigation tracks the reading position through Contact.
 
 ## Build for later hosting
 
@@ -35,3 +35,4 @@ Run `npm run build`, then `npm run preview` to preview the production build at *
 The October 14 refinement is local-only; the earlier private hosted template has not been updated. No domain is required to develop or preview locally.
 
 Fonts use Google Fonts with local fallbacks. Dependencies are locked in `package-lock.json`; use `npm ci` for repeatable installs. Vite documentation: https://vite.dev/guide/
+

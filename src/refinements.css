@@ -315,6 +315,10 @@ aside > .eyebrow:first-child { margin-top: 0; }
 }
 
 /* Personal details and comfortable layouts across phones and tablets. */
+.university-link { color: var(--accent); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.university-link:hover { text-decoration-color: var(--accent); }
+.profile-picture { background: radial-gradient(circle at 50% 35%, var(--accent-soft), var(--surface) 75%); border-color: var(--accent); }
+#profile-photo { object-fit: contain; object-position: center bottom; }
 .brand > [data-name] { overflow-wrap: anywhere; }
 .hero > .muted { text-wrap: pretty; }
 @media (max-width: 900px) {

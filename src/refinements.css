@@ -1,0 +1,70 @@
+:root, :root[data-theme=dark] {
+  color-scheme: dark;
+  --bg: #050607;
+  --surface: #101316;
+  --text: #e9edef;
+  --muted: #9aa2a9;
+  --line: #242a2e;
+  --accent: #8cdac8;
+  --accent-soft: #10241f;
+  --terminal: #0b1011;
+  --terminal-text: #c4d2d0;
+}
+body { isolation: isolate; }
+.data-flow {
+  position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1;
+  pointer-events: none; fill: none; stroke-width: 1;
+  mask-image: linear-gradient(to right, #000, #0003 30%, #0002 65%, #000);
+}
+.flow-tracks { stroke: #8cdac8; opacity: .07; }
+.flow-packets { stroke: #8cdac8; opacity: .32; stroke-linecap: round; }
+.flow-packets use { stroke-dasharray: 22 1000; animation: data-travel 20s linear infinite; }
+.flow-packets use:nth-child(2) { animation-duration: 26s; animation-delay: -9s; }
+.flow-packets use:nth-child(3) { animation-duration: 32s; animation-delay: -19s; opacity: .6; }
+@keyframes data-travel { to { stroke-dashoffset: -1022; } }
+.motion-paused .flow-packets use, .page-hidden .flow-packets use { animation-play-state: paused; }
+.motion-toggle { background: transparent; border: 1px solid var(--line); padding: 8px 11px; border-radius: 6px; color: var(--muted); font: 10px 'IBM Plex Mono', monospace; }
+.motion-toggle:disabled { cursor: default; }
+.hero h1 { font-weight: 500; letter-spacing: -2.2px; }
+.hero h1 span { color: #9ca7ad; }
+.hero > .eyebrow { letter-spacing: 1.5px; }
+.primary { background: var(--accent); color: #071410; font-weight: 600; }
+.terminal { background: linear-gradient(125deg, #101819eb, #090c0eed); box-shadow: 0 12px 45px #0003; }
+.terminal-head { color: #8d9e9b; }
+.prompt, .terminal-key { color: var(--accent); }
+.cursor { background: var(--accent); opacity: .7; }
+.project-visual { background: linear-gradient(145deg, #151d20, #0b0f11); }
+.monogram { background: #0d1415; border-color: #2b403c; }
+.tags span { background: #0b0e10; color: #b8c0c5; padding: 4px 9px; border-radius: 5px; }
+nav a, button, .primary, .social-links a, .tags span, .project-visual {
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+nav a.active { box-shadow: inset 2px 0 var(--accent); }
+.primary:hover { background: #a9e8d9; transform: translateY(-2px); box-shadow: 0 5px 20px #8cdac815; }
+.primary:active { transform: translateY(0); }
+.motion-toggle:hover:not(:disabled), .cert button:hover { color: var(--accent); border-color: #497b70; }
+.project:hover .project-visual, .project:focus-within .project-visual { border-color: #426b61; transform: translateY(-2px); }
+.project h3 button:hover, .text-button:hover { color: var(--accent); }
+.ctf-row:hover { background: #8cdac805; }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.7,.2,1); }
+.reveal.revealed, .reveal:focus-within { opacity: 1; transform: none; }
+dialog { background: #0c1012; box-shadow: 0 30px 100px #000a; }
+dialog[open] { animation: dialog-enter 220ms ease-out; }
+dialog[open]::backdrop { animation: backdrop-enter 220ms ease-out; background: #000b; backdrop-filter: blur(5px); }
+body:has(dialog[open]) { overflow: hidden; }
+@keyframes dialog-enter { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes backdrop-enter { from { opacity: 0; } to { opacity: 1; } }
+#toast { display: block; opacity: 0; visibility: hidden; transform: translate(-50%, 10px); transition: opacity 200ms ease, transform 200ms ease, visibility 200ms; }
+#toast.show { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+@media (max-width: 650px) {
+  .data-flow { opacity: .6; }
+  .header-right { gap: 8px; }
+  .brand { gap: 8px; }
+  .motion-toggle { font-size: 9px; padding: 7px 8px; }
+  .hero h1 { font-size: clamp(30px, 8.8vw, 38px); }
+  .email-link { max-width: 100%; overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}

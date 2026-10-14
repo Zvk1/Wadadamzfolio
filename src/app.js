@@ -16,6 +16,21 @@ if (p.photo) {
     document.getElementById('photo-placeholder').hidden = false;
   });
   profilePhoto.src = p.photo;
+  if (p.photoLight) {
+    const lightPhoto = new Image();
+    lightPhoto.className = 'profile-photo-light';
+    lightPhoto.alt = '';
+    lightPhoto.setAttribute('aria-hidden', 'true');
+    lightPhoto.width = lightPhoto.height = 112;
+    lightPhoto.addEventListener('load', () => {
+      profilePhoto.parentElement.classList.add('profile-light-ready');
+    });
+    lightPhoto.addEventListener('error', () => {
+      profilePhoto.parentElement.classList.remove('profile-light-ready');
+    });
+    profilePhoto.parentElement.append(lightPhoto);
+    lightPhoto.src = p.photoLight;
+  }
 }
 document.title='Zaki Boongaling - Portfolio';
 document.getElementById('year').textContent=new Date().getFullYear();

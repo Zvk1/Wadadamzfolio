@@ -383,7 +383,7 @@ aside > .eyebrow:first-child { margin-top: 0; }
   position: relative; width: 100%; max-width: 220px; height: auto; aspect-ratio: 1;
   margin: 0 0 16px; border: 0; border-radius: 0; background: transparent; overflow: visible;
 }
-.profile-summary > h2 { margin: 0 0 10px; font-size: 25px; line-height: 1.2; letter-spacing: -.65px; text-wrap: balance; }
+.profile-summary > h2 { margin: 0 0 10px; font-size: 25px; line-height: 1.2; letter-spacing: .015em; text-wrap: balance; }
 .profile-summary > .profile-role, .profile-summary > .sidebar-bio {
   font: 400 14px/1.6 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none;
 }
@@ -403,4 +403,20 @@ aside > .eyebrow:first-child { margin-top: 0; }
 @media (max-width: 380px) {
   .profile-summary { grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; }
   .profile-summary .profile-picture { width: 76px; }
+}
+
+/* Shirt colors follow the resolved theme, including the system's Auto setting. */
+.profile-photo-light {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; object-position: center bottom; opacity: 0; pointer-events: none;
+}
+[data-theme=light] .profile-light-ready .profile-photo-light { opacity: 1; }
+[data-theme=light] .profile-light-ready #profile-photo { opacity: 0; }
+
+/* A little more room between letters without oversized word gaps. */
+.hero h1, .contact h2 { letter-spacing: .025em; }
+.section-heading h2, dialog h2 { letter-spacing: .015em; }
+@media (max-width: 650px) {
+  .hero h1, .contact h2 { letter-spacing: .015em; }
+  .profile-summary > h2 { letter-spacing: .01em; }
 }

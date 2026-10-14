@@ -377,3 +377,37 @@ aside > .eyebrow:first-child { margin-top: 0; }
   .profile-summary > h2 { grid-column: 2; font-size: 20px; margin: 0 0 5px; overflow-wrap: anywhere; }
   .profile-summary > .sidebar-bio { display: block; grid-column: 2; font-size: 12px; line-height: 1.5; margin: 0; }
 }
+
+/* Borderless portrait and a consistent profile hierarchy. */
+.profile-summary .profile-picture {
+  position: relative; width: 100%; max-width: 220px; height: auto; aspect-ratio: 1;
+  margin: 0 0 16px; border: 0; border-radius: 0; background: transparent; overflow: visible;
+}
+.profile-summary > h2 { margin: 0 0 8px; }
+.profile-summary > .profile-role, .profile-summary > .sidebar-bio {
+  font: 400 14px/1.6 'DM Sans', sans-serif; letter-spacing: 0; text-transform: none;
+}
+.profile-summary > .profile-role { color: var(--accent); margin: 0 0 10px; }
+.profile-summary > .sidebar-bio { color: var(--muted); margin: 0 0 28px; }
+.portrait-motion { display: none; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.portrait-tracking .portrait-motion { display: block; }
+.portrait-tracking #profile-photo { opacity: 0; }
+@media (max-height: 800px) and (min-width: 651px) {
+  .profile-summary .profile-picture { max-width: 156px; margin-bottom: 12px; }
+}
+@media (max-width: 650px) {
+  .profile-summary { grid-template-columns: 96px minmax(0, 1fr); gap: 0 16px; }
+  .profile-summary .profile-picture { grid-column: 1; grid-row: 1 / 4; width: 96px; max-width: none; margin: 0; }
+  .profile-summary > h2 { grid-column: 2; grid-row: 1; margin: 0 0 4px; font-size: 20px; }
+  .profile-summary > .profile-role { grid-column: 2; grid-row: 2; margin: 0 0 6px; }
+  .profile-summary > .sidebar-bio { grid-column: 2; grid-row: 3; margin: 0; }
+  .profile-summary > .profile-role, .profile-summary > .sidebar-bio { font-size: 12px; line-height: 1.5; }
+}
+@media (max-width: 380px) {
+  .profile-summary { grid-template-columns: 76px minmax(0, 1fr); column-gap: 12px; }
+  .profile-summary .profile-picture { width: 76px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-tracking .portrait-motion { display: none; }
+  .portrait-tracking #profile-photo { opacity: 1; }
+}

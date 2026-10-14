@@ -1,4 +1,4 @@
-﻿# Cybersecurity portfolio
+# Cybersecurity portfolio
 
 A local-first portfolio using JavaScript, Vite, and CSS. Node.js runs the development tools; the finished website is static and can later use a custom domain.
 
@@ -21,10 +21,12 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 - `src/style.css`: base responsive layout.
 - `src/refinements.css`: black theme, data-line animation, transitions.
 - `src/app.js`: content rendering, dialogs, navigation, and links.
-- `src/motion.js`: motion preference and section reveals.
+- `src/motion.js`: motion preference, section reveals, and click/tap speed boosts.
+- `src/theme.js`: persistent Auto/Light/Dark preferences.
+- `src/navigation.js`: section navigation; regression checks run with `node --test tests/navigation.test.js`.
 - `public/`: static files such as `resume.pdf`; set the resume link to `/resume.pdf`.
 
-Keep URLs empty until real links are ready. All example projects and credentials are placeholders, not claims about you. The black theme is the default. The Pause motion control persists locally; device reduced-motion preferences disable animation automatically.
+Keep URLs empty until real links are ready. All example projects and credentials are placeholders, not claims about you. Dark is the default for new visitors. The custom Auto/Light/Dark menu remembers your preference; Auto follows your device. Theme changes fade smoothly, with reduced-motion support. Use arrow keys to navigate the menu, Enter to select, and Escape to close. The icon-only pause/play control also persists locally. Clicking or tapping briefly boosts the data lines; paused motion and device reduced-motion preferences disable the boost. Numbered sections have viewport-sized spacing, and navigation tracks the reading position through Contact.
 
 ## Build for later hosting
 

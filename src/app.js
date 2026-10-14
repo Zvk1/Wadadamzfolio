@@ -18,6 +18,8 @@ document.querySelectorAll('[data-project]').forEach(el=>el.onclick=()=>{const x=
 document.querySelectorAll('[data-ctf]').forEach(el=>el.onclick=()=>{const x=p.ctfs[el.dataset.ctf];showDetail(`<p class="eyebrow">${escapeHtml(x.category)} · TEMPLATE ENTRY</p><h2 id="detail-title">${escapeHtml(x.title)}</h2><p>${escapeHtml(x.event)}</p><h3>Approach & lessons</h3><p>${escapeHtml(x.notes)}</p><button class="text-button" id="detail-url">Read full write-up ↗</button>`);document.getElementById('detail-url').onclick=()=>openUrl(x.url,'Write-up link')});
 document.querySelectorAll('[data-cert]').forEach(el=>el.onclick=()=>openUrl(p.certifications[el.dataset.cert].url,'Credential verification'));
 dialog.querySelector('.close').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
-const navLinks=[...document.querySelectorAll('nav a')];const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){navLinks.forEach(a=>{const active=a.hash==='#'+e.target.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}},{rootMargin:'-10% 0px -65% 0px'});navLinks.forEach(a=>observer.observe(document.querySelector(a.hash)));
 
 import './motion.js';
+
+import './theme.js';
+import './navigation.js';

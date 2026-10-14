@@ -3,6 +3,7 @@ const p = window.PORTFOLIO;
 const escapeHtml = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 document.querySelectorAll('[data-name]').forEach(el=>el.textContent=p.name);
 document.querySelector('[data-availability]').textContent=p.availability;
+document.querySelectorAll('[data-university]').forEach(el=>el.textContent=p.university);
 const profilePhoto = document.getElementById('profile-photo');
 if (p.photo) {
   profilePhoto.alt = `Portrait of ${p.name}`;

@@ -18,8 +18,9 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 
 - `src/content.js`: name, profile photo, availability, links, projects, CTF entries, certifications.
 - `index.html`: introduction, education, location, skills, contact invitation.
-- `src/style.css`: base responsive layout.
-- `src/refinements.css`: black theme, data-line animation, transitions.
+- `src/style.css`: shared design tokens, both palettes, typography and responsive layout.
+- `src/refinements.css`: appearance controls, data-line animation and theme transitions.
+- `src/links.js`: validation for usable profile destinations.
 - `src/app.js`: content rendering, dialogs, navigation, and links.
 - `src/motion.js`: motion preference, section reveals, and click/tap speed boosts.
 - `src/theme.js`: accessible Auto/Light/Dark menu, radial sun/moon transitions, and fallback behavior.
@@ -28,17 +29,19 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 - `src/navigation.js`: section navigation; regression checks run with `node --test tests/*.test.js`.
 - `public/`: static files such as `resume.pdf`; set the resume link to `/resume.pdf`.
 
-Keep URLs empty until real links are ready. All example projects and credentials are placeholders, not claims about you. Dark is the default for new visitors. The compact Auto/Light/Dark selector remembers your preference; Auto follows your device. The icon-only pause/play control also persists locally. Clicking or tapping briefly boosts the data lines; paused motion and device reduced-motion preferences disable the boost. Numbered sections have viewport-sized spacing, and navigation tracks the reading position through Contact. Skills & tools is part of About. There is no logo. A photo placeholder appears above Computer Engineering, with a compact profile layout on mobile. To replace it, put `profile.jpg` in `public/` and set `photo` to `/profile.jpg` in `src/content.js`. Failed image loads keep the placeholder visible. The decorative data pipeline spans the full document with asymmetric rails, feeder branches, and cross-section routes. Mint-green packets move at varied speeds in both directions. Flow is intentionally sparse: two outer routes plus two cross-section routes on desktop, and one cross-section route on mobile, with wider gaps between packets. Routes recalculate when content or viewport size changes, and click boosts still work.
+Keep URLs empty until real links are ready; unavailable profile actions stay hidden. Example projects, tools and credentials are placeholders, not claims about you. Dark is the default for new visitors. Auto follows your device, and theme/motion preferences persist locally. Numbered sections use content-sized spacing. Navigation tracks the reading position through Contact; Skills & tools remains part of About.
+
+The borderless portrait is static. `photo` selects the white-shirt portrait for Dark mode; `photoLight` selects the black-shirt portrait for Light mode. Both assets live in `public/`. The profile switches to a compact layout on tablets and phones. The decorative mint data lines remain sparse, respect reduced motion and the Pause control, and recalculate when the content or viewport changes.
 
 ## Build for later hosting
 
 Run `npm run build`, then `npm run preview` to preview the production build at **http://127.0.0.1:4173**. The generated `dist/` folder is the deployable site. Edit source files, not `dist/`.
 
-The October 14 refinement is local-only; the earlier private hosted template has not been updated. No domain is required to develop or preview locally.
+The October 15 refinement is local-only; the earlier private hosted template has not been updated. No domain is required to develop or preview locally.
 
 Fonts use Google Fonts with local fallbacks. Dependencies are locked in `package-lock.json`; use `npm ci` for repeatable installs. Vite documentation: https://vite.dev/guide/
 
 
 ## Verification
 
-Build, source structure, navigation, and pipeline geometry checks pass. Browser/device visual QA is still pending because no browser connection was available. Before external hosting, review phone/tablet/desktop layouts, keyboard menu operation, reduced motion, zoom, orientation changes, and repeated theme switches. API reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition
+Build and all 13 checks pass, covering palette contrast, link validation, design tokens, document targets, assets, navigation, pipeline geometry and theme transitions. Run `node --test tests/*.test.js`. Browser/device visual QA is pending because the browser-control runtime could not start. See [DESIGN-REVIEW.md](DESIGN-REVIEW.md) for the changes, evidence and remaining verification limits.

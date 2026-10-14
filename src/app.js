@@ -16,7 +16,7 @@ if (p.photo) {
   });
   profilePhoto.src = p.photo;
 }
-document.title=p.name+' — Cybersecurity & Computer Engineering';
+document.title='Zaki Boongaling - Portfolio';
 document.getElementById('year').textContent=new Date().getFullYear();
 const visuals={network:'<path d="M20 22L70 22L45 68Z"/><path d="M20 22L20 68L70 68L70 22M20 68L45 45L70 68"/><circle cx="20" cy="22" r="6"/><circle cx="70" cy="22" r="6"/><circle cx="45" cy="45" r="6"/><circle cx="20" cy="68" r="6"/><circle cx="70" cy="68" r="6"/>',chip:'<rect x="25" y="25" width="40" height="40" rx="3"/><rect x="34" y="34" width="22" height="22"/><path d="M33 15V25M45 15V25M57 15V25M33 65V75M45 65V75M57 65V75M15 33H25M15 45H25M15 57H25M65 33H75M65 45H75M65 57H75"/>',terminal:'<rect x="10" y="20" width="70" height="51" rx="4"/><path d="M10 32H80M22 44L31 51L22 58M39 59H57"/><circle cx="18" cy="26" r="1"/><circle cx="24" cy="26" r="1"/>'};
 document.getElementById('project-list').innerHTML=p.projects.map((x,i)=>`<article class="project"><div class="project-visual"><span class="visual-number">${escapeHtml(x.number)}</span><svg viewBox="0 0 90 90" aria-hidden="true">${visuals[x.visual]||visuals.terminal}</svg></div><div><div class="project-category">${escapeHtml(x.category)}</div><h3><button data-project="${i}">${escapeHtml(x.title)} <span>↗</span></button></h3><p>${escapeHtml(x.description)}</p><div class="tags">${x.tags.map(t=>`<span>${escapeHtml(t)}</span>`).join('')}</div></div></article>`).join('');

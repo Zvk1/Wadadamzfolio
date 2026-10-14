@@ -1,5 +1,6 @@
 import './content.js';
 import { linkHref } from './links.js';
+import { openResumePreview } from './resume.js';
 const p = window.PORTFOLIO;
 const escapeHtml = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 document.querySelectorAll('[data-name]').forEach(el=>el.textContent=p.name);
@@ -47,6 +48,19 @@ function openUrl(url,label) {
 }
 document.querySelectorAll('[data-link]').forEach(el => {
   const key = el.dataset.link;
+  if (key === 'resume') {
+    el.hidden = false;
+    el.disabled = false;
+    el.querySelector('.action-note')?.remove();
+    el.setAttribute('aria-haspopup', 'dialog');
+    el.setAttribute('aria-controls', 'detail');
+    el.addEventListener('click', () => openResumePreview({
+      dialog: document.getElementById('detail'),
+      content: document.getElementById('detail-content'),
+      name: p.name, url: p.links.resume,
+    }));
+    return;
+  }
   const href = linkHref(p.links[key], key === 'email' ? 'email' : 'web', location.href);
   if (!href) {
     el.hidden = !el.hasAttribute('data-placeholder');
@@ -64,6 +78,10 @@ document.querySelectorAll('[data-link]').forEach(el => {
   el.replaceWith(anchor);
 });
 const dialog=document.getElementById('detail');const showDetail=html=>{document.getElementById('detail-content').innerHTML=html;dialog.showModal()};
+dialog.addEventListener('close', () => {
+  dialog.classList.remove('resume-dialog');
+  document.getElementById('detail-content').replaceChildren();
+});
 document.querySelectorAll('[data-project]').forEach(el=>el.onclick=()=>{const x=p.projects[el.dataset.project];showDetail(`<p class="eyebrow">${escapeHtml(x.category)} · TEMPLATE ENTRY</p><h2 id="detail-title">${escapeHtml(x.title)}</h2><p>${escapeHtml(x.description)}</p><h3>Your contribution</h3><p>${escapeHtml(x.role)}</p><h3>Process & lessons</h3><p>${escapeHtml(x.learning)}</p>${x.url?'<button class="text-button" id="detail-url">View repository / demo ↗</button>':''}`);const link=document.getElementById('detail-url');if(link)link.onclick=()=>openUrl(x.url,'Project link')});
 document.querySelectorAll('[data-ctf]').forEach(el=>el.onclick=()=>{const x=p.ctfs[el.dataset.ctf];showDetail(`<p class="eyebrow">${escapeHtml(x.category)} · TEMPLATE ENTRY</p><h2 id="detail-title">${escapeHtml(x.title)}</h2><p>${escapeHtml(x.event)}</p><h3>Approach & lessons</h3><p>${escapeHtml(x.notes)}</p>${x.url?'<button class="text-button" id="detail-url">Read full write-up ↗</button>':''}`);const link=document.getElementById('detail-url');if(link)link.onclick=()=>openUrl(x.url,'Write-up link')});
 document.querySelectorAll('[data-project], [data-ctf]').forEach(el => {

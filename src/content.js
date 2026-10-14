@@ -4,7 +4,7 @@ window.PORTFOLIO = {
   university: 'Technological Institute of The Philippines - Manila',
   photo: '/profile-refined.png',
   photoLight: '/profile-black-shirt.png',
-  links: { github: 'https://github.com/Zvk1', linkedin: 'https://www.linkedin.com/in/zak1-boongaling', resume: '', email: 'zaki.bnglng@gmail.com', other: '' },
+  links: { github: 'https://github.com/Zvk1', linkedin: 'https://www.linkedin.com/in/zak1-boongaling', email: 'zaki.bnglng@gmail.com', other: '' },
   projects: [
     { title: 'Network traffic analyzer', category: 'SCHOOL PROJECT', number: '01', visual: 'network', description: 'Example project · A tool for exploring packet captures and identifying unusual network behavior.', tags: ['Python', 'Wireshark', 'Networking'], role: '[Your role and contribution]', learning: '[Explain your approach, what you tested, and what you learned.]', url: '' },
     { title: 'Embedded access control', category: 'COMPUTER ENGINEERING', number: '02', visual: 'chip', description: 'Example project · An access-control prototype connecting hardware, authentication, and event logging.', tags: ['C / C++', 'Microcontrollers', 'Security'], role: '[Your role and contribution]', learning: '[Add the design decisions, limitations, and a link to the code or demo.]', url: '' },

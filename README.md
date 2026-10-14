@@ -27,7 +27,7 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 - `src/theme-transition.js`: retains the final clip until snapshots are removed to prevent a light-mode flash.
 - `src/pipeline.js`: responsive document-length paths and scroll progress.
 - `src/navigation.js`: section navigation; regression checks run with `node --test tests/*.test.js`.
-- `public/`: static files such as `resume.pdf`; set the resume link to `/resume.pdf`.
+- `public/`: static portrait images and other site assets.
 
 Keep URLs empty until real links are ready; unavailable profile actions stay hidden. Example projects, tools and credentials are placeholders, not claims about you. Dark is the default for new visitors. Auto follows your device, and theme/motion preferences persist locally. Numbered sections use content-sized spacing. Navigation tracks the reading position through Contact; Skills & tools remains part of About.
 

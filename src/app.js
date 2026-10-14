@@ -1,6 +1,5 @@
 import './content.js';
 import { linkHref } from './links.js';
-import { openResumePreview } from './resume.js';
 const p = window.PORTFOLIO;
 const escapeHtml = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 document.querySelectorAll('[data-name]').forEach(el=>el.textContent=p.name);
@@ -48,30 +47,12 @@ function openUrl(url,label) {
 }
 document.querySelectorAll('[data-link]').forEach(el => {
   const key = el.dataset.link;
-  if (key === 'resume') {
-    el.hidden = false;
-    el.disabled = false;
-    el.querySelector('.action-note')?.remove();
-    el.setAttribute('aria-haspopup', 'dialog');
-    el.setAttribute('aria-controls', 'detail');
-    el.addEventListener('click', () => openResumePreview({
-      dialog: document.getElementById('detail'),
-      content: document.getElementById('detail-content'),
-      name: p.name, url: p.links.resume,
-    }));
-    return;
-  }
   const href = linkHref(p.links[key], key === 'email' ? 'email' : 'web', location.href);
-  if (!href) {
-    el.hidden = !el.hasAttribute('data-placeholder');
-    if (!el.hidden) el.disabled = true;
-    return;
-  }
+  if (!href) { el.hidden = true; return; }
   const anchor = document.createElement('a');
   anchor.className = el.className;
   anchor.dataset.link = key;
   anchor.innerHTML = el.innerHTML;
-  anchor.querySelector('.action-note')?.remove();
   anchor.href = href;
   if (key === 'email') anchor.firstChild.textContent = p.links.email + ' ';
   else { anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; }
@@ -79,7 +60,6 @@ document.querySelectorAll('[data-link]').forEach(el => {
 });
 const dialog=document.getElementById('detail');const showDetail=html=>{document.getElementById('detail-content').innerHTML=html;dialog.showModal()};
 dialog.addEventListener('close', () => {
-  dialog.classList.remove('resume-dialog');
   document.getElementById('detail-content').replaceChildren();
 });
 document.querySelectorAll('[data-project]').forEach(el=>el.onclick=()=>{const x=p.projects[el.dataset.project];showDetail(`<p class="eyebrow">${escapeHtml(x.category)} · TEMPLATE ENTRY</p><h2 id="detail-title">${escapeHtml(x.title)}</h2><p>${escapeHtml(x.description)}</p><h3>Your contribution</h3><p>${escapeHtml(x.role)}</p><h3>Process & lessons</h3><p>${escapeHtml(x.learning)}</p>${x.url?'<button class="text-button" id="detail-url">View repository / demo ↗</button>':''}`);const link=document.getElementById('detail-url');if(link)link.onclick=()=>openUrl(x.url,'Project link')});

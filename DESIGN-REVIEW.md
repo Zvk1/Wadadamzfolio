@@ -11,7 +11,7 @@ Reviewed October 15, 2026 against the supplied `anti-generic-ui-ux-design.md`.
 - Removed viewport-height minimums from content sections, making vertical spacing follow the content instead of creating blank screens.
 - Added a tablet layout at 800px and narrower-phone navigation at 380px. Sidebar scrolling keeps navigation reachable on short desktop windows.
 - Preserved the borderless, static portrait and black-shirt/light-theme, white-shirt/dark-theme pairing. Removed a conflicting fallback rule that permanently hid the placeholder.
-- Converted profile destinations into native anchors so visitors can copy/open links normally. Missing résumé and other-contact destinations are hidden. Unavailable credential actions appear as status text; missing project/write-up destinations are omitted from dialogs.
+- Converted profile destinations into native anchors so visitors can copy/open links normally. Missing other-contact destinations are hidden. Unavailable credential actions appear as status text; missing project/write-up destinations are omitted from dialogs.
 - Replaced the credential glyph and theme checkmarks with inline SVG. Removed the em dash in the introduction and implementation-file instructions from visitor messages.
 - Retained keyboard focus indicators, a focusable skip-link destination, accessible theme controls, dialog semantics, reduced-motion handling and the existing motion pause control. The portrait animation stays removed.
 

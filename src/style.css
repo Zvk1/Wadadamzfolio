@@ -78,15 +78,6 @@ main>.hero { padding-top:var(--space-8); }
 .primary { display:inline-flex; align-items:center; justify-content:space-between; min-height:48px; gap:var(--space-6); padding:var(--space-3) var(--space-5); border-radius:var(--radius-sm); background:var(--accent); color:var(--on-accent); font-size:var(--text-sm); font-weight:600; }
 .primary:hover { background:var(--accent-hover); transform:translateY(-1px); box-shadow:var(--shadow-xs); }
 .primary:active { transform:none; }
-.resume-action { justify-content:center; background:var(--on-accent); color:var(--accent); border:1px solid var(--accent); }
-.resume-action:hover:not(:disabled) { background:var(--on-accent); color:var(--accent-hover); border-color:var(--accent-hover); }
-.resume-action:disabled { opacity:1; }
-.resume-action:disabled:hover { background:var(--on-accent); transform:none; box-shadow:none; }
-.resume-dialog { width:min(860px,calc(100% - 32px)); }
-.resume-dialog h2 { margin-top:0; }
-.resume-frame { display:block; width:100%; height:clamp(240px,60dvh,720px); border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--surface); }
-.resume-actions { display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-5); margin-top:var(--space-5); }
-.resume-empty { padding-block:var(--space-6); }
 .text-button { display:inline-flex; align-items:center; min-height:var(--touch-target); border:0; background:transparent; padding:var(--space-2) 0; font-size:var(--text-sm); }
 .text-button:hover { color:var(--accent); }
 .social-links { display:flex; flex-wrap:wrap; gap:var(--space-1) var(--space-5); margin:var(--space-4) 0 var(--space-5); }

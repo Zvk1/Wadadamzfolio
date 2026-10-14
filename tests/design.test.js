@@ -49,7 +49,7 @@ test('CSS variables resolve to a declared token or an explicit runtime fallback'
 test('profile links accept real destinations and omit missing or unsafe ones', () => {
   assert.equal(linkHref('https://github.com/Zvk1'), 'https://github.com/Zvk1');
   assert.equal(linkHref('zaki.bnglng@gmail.com', 'email'), 'mailto:zaki.bnglng@gmail.com');
-  assert.equal(linkHref('/resume.pdf', 'web', 'https://example.com/about'), 'https://example.com/resume.pdf');
+  assert.equal(linkHref('/profile.png', 'web', 'https://example.com/about'), 'https://example.com/profile.png');
   for (const invalid of ['', '  ', undefined, 'javascript:alert(1)', 'data:text/html,hello']) assert.equal(linkHref(invalid), null);
   assert.equal(linkHref('name@example.com\nBcc:someone@example.com', 'email'), null);
 });

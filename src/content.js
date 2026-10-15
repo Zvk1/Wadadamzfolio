@@ -9,7 +9,7 @@ window.PORTFOLIO = {
     {
       title: 'review.mnl', category: 'WEB APPLICATION', number: '01', visual: 'network',
       description: 'A centralized review-center platform that helps students discover programs, explore available centers, and find a clearer path to enrollment.',
-      tags: ['Discovery', 'Enrollment', 'Promotion'], role: 'Full-stack development',
+      role: 'Full-stack development',
       learning: 'The project brought review-center information into one focused experience, balancing student discovery with the need to present each center clearly and consistently.',
       url: 'https://review-mnl-gamma.vercel.app',
       image: '/assets/projects/review-mnl/screenshot.png', imageAlt: 'review.mnl homepage with review center search and categories'
@@ -17,7 +17,7 @@ window.PORTFOLIO = {
     {
       title: 'The Event Lab', category: 'STUDENT EVENT PLATFORM', number: '02', visual: 'terminal',
       description: 'A student event platform for TIP that brings event information, scheduling, and coordination into one organized space.',
-      tags: ['Event planning', 'Coordination', 'TIP students'], role: 'Frontend and backend development',
+      role: 'Frontend and backend development',
       learning: 'The platform was shaped around making campus events easier to organize and easier for students to follow, from the initial event details through coordination.',
       url: 'https://theeventlabs.netlify.app',
       image: '/assets/projects/the-event-lab/screenshot.png', imageAlt: 'The Event Lab About page describing the project story and mission'

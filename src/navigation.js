@@ -1,10 +1,14 @@
 import { activeSectionIndex } from './active-section.js';
 
 const links = [...document.querySelectorAll('nav a')];
-const sections = links.map(link => document.querySelector(link.hash));
+const sections = links.map(link => document.querySelector(`#${link.dataset.section || link.hash.slice(1)}`));
 let pendingTarget = null;
 let releaseTimer;
 let scheduled = false;
+
+if (location.hash === '#about') {
+  history.replaceState(null, '', `${location.pathname}${location.search}`);
+}
 
 function activate(index) {
   links.forEach((link, i) => {
@@ -43,6 +47,18 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     releaseTimer = setTimeout(release, 1800);
   });
 });
+const aboutLink = document.querySelector('nav a[data-section="about"]');
+if (aboutLink) {
+  aboutLink.addEventListener('click', event => {
+    event.preventDefault();
+    history.replaceState(null, '', `${location.pathname}${location.search}`);
+    pendingTarget = 0;
+    activate(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    clearTimeout(releaseTimer);
+    releaseTimer = setTimeout(release, 1800);
+  });
+}
 window.addEventListener('scroll', schedule, { passive: true });
 window.addEventListener('resize', schedule);
 window.addEventListener('scrollend', release);

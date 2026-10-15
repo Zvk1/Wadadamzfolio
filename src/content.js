@@ -40,6 +40,12 @@ window.PORTFOLIO = {
       issuer: 'Hack The Box', date: 'July 2026', status: 'Participation',
       url: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf',
       linkLabel: 'View certificate'
+    },
+    {
+      title: 'CCNA: Enterprise Networking, Security, and Automation',
+      issuer: 'Cisco', date: 'September 2026', status: 'Certification',
+      url: '/assets/certifications/ccna-enterprise-networking-security-automation/certificate.pdf',
+      linkLabel: 'View certificate'
     }
   ]
 };

@@ -8,14 +8,18 @@ window.PORTFOLIO = {
   projects: [
     {
       title: 'review.mnl', category: 'WEB APPLICATION', number: '01', visual: 'network',
-      description: 'A centralized website for finding, enrolling in, and promoting review centers.',
-      tags: [], role: 'Full stack', url: 'https://review-mnl-gamma.vercel.app',
+      description: 'A centralized review-center platform that helps students discover programs, explore available centers, and find a clearer path to enrollment.',
+      tags: ['Discovery', 'Enrollment', 'Promotion'], role: 'Full-stack development',
+      learning: 'The project brought review-center information into one focused experience, balancing student discovery with the need to present each center clearly and consistently.',
+      url: 'https://review-mnl-gamma.vercel.app',
       image: '/assets/projects/review-mnl/screenshot.png', imageAlt: 'review.mnl homepage with review center search and categories'
     },
     {
       title: 'The Event Lab', category: 'STUDENT EVENT PLATFORM', number: '02', visual: 'terminal',
-      description: 'A website for TIP students that simplifies event scheduling and coordination.',
-      tags: [], role: 'Frontend and backend', url: 'https://theeventlabs.netlify.app',
+      description: 'A student event platform for TIP that brings event information, scheduling, and coordination into one organized space.',
+      tags: ['Event planning', 'Coordination', 'TIP students'], role: 'Frontend and backend development',
+      learning: 'The platform was shaped around making campus events easier to organize and easier for students to follow, from the initial event details through coordination.',
+      url: 'https://theeventlabs.netlify.app',
       image: '/assets/projects/the-event-lab/screenshot.png', imageAlt: 'The Event Lab About page describing the project story and mission'
     }
   ],
@@ -34,7 +38,6 @@ window.PORTFOLIO = {
     {
       title: 'Cyber Apocalypse CTF 2026: The Salt Crown - Certificate of Participation',
       issuer: 'Hack The Box', date: 'July 2026', status: 'Participation',
-      details: 'Team TIPwners.sh placed 875th of 6,744 teams, solving 26 of 136 challenges for 15,250 points. The certificate lists July 24-29, 2026.',
       url: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf',
       linkLabel: 'View certificate'
     }

@@ -28,8 +28,9 @@ With Node.js 22.12+ installed, use `npm install` then `npm run dev`.
 - `src/pipeline.js`: responsive document-length paths and scroll progress.
 - `src/navigation.js`: section navigation; regression checks run with `node --test tests/*.test.js`.
 - `public/`: static portrait images and other site assets.
+- `CONTENT-GUIDE.md`: current content index, asset paths, and details to collect for future entries.
 
-Keep URLs empty until real links are ready; unavailable profile actions stay hidden. Example projects, tools and credentials are placeholders, not claims about you. Dark is the default for new visitors. Auto follows your device, and theme/motion preferences persist locally. Numbered sections use content-sized spacing. Navigation tracks the reading position through Contact; Skills & tools remains part of About.
+Keep URLs empty until real links are ready; unavailable profile actions stay hidden. Projects, CTF events, and the participation certificate use the details supplied by Zaki; the Skills & tools section still contains examples. Dark is the default for new visitors. Auto follows your device, and theme/motion preferences persist locally. Numbered sections use content-sized spacing. Navigation tracks the reading position through Contact; Skills & tools remains part of About.
 
 The borderless portrait is static. `photo` selects the white-shirt portrait for Dark mode; `photoLight` selects the black-shirt portrait for Light mode. Both assets live in `public/`. The profile switches to a compact layout on tablets and phones. The decorative mint data lines remain sparse, respect reduced motion and the Pause control, and recalculate when the content or viewport changes.
 

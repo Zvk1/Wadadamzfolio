@@ -26,12 +26,12 @@ window.PORTFOLIO = {
   ctfs: [
     {
       title: 'Cyber Apocalypse CTF 2026: The Salt Crown',
-      event: 'Hack The Box', category: 'CTF', status: 'Participated',
-      dates: 'July 24-29, 2026; After Party: July 31-August 2, 2026', url: ''
+      organizer: 'Hack The Box', category: 'CTF', status: 'Participated',
+      date: 'July 24, 2026', url: ''
     },
     {
-      title: 'LearnPossible 2 CTF', event: 'Hexcore Labs PH',
-      category: 'CTF', status: 'Upcoming', dates: 'Starts October 16, 2026', url: ''
+      title: 'LearnPossible 2 CTF', organizer: 'Hexcore Labs PH',
+      category: 'CTF', status: 'Upcoming', date: 'October 16, 2026', url: ''
     }
   ],
   certifications: [

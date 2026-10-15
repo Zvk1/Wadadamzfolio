@@ -20,7 +20,7 @@ window.PORTFOLIO = {
       role: 'Frontend and backend development',
       learning: 'The platform was shaped around making campus events easier to organize and easier for students to follow, from the initial event details through coordination.',
       url: 'https://theeventlabs.netlify.app',
-      image: '/assets/projects/the-event-lab/screenshot.png', imageAlt: 'The Event Lab About page describing the project story and mission'
+      image: '/assets/projects/the-event-lab/screenshot.png', imageAlt: 'The Event Lab Our Story page describing its mission and student-first values'
     }
   ],
   ctfs: [

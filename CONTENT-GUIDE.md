@@ -18,8 +18,8 @@ The live entries for Projects, CTF, and Certifications are in [`src/content.js`]
 | review.mnl | Project | [Live site](https://review-mnl-gamma.vercel.app/); `public/assets/projects/review-mnl/screenshot.png` |
 | The Event Lab | Project | [Live site](https://theeventlabs.netlify.app/); `public/assets/projects/the-event-lab/screenshot.png`, `public/assets/projects/the-event-lab/landing-page.png` |
 | Cyber Apocalypse CTF 2026: The Salt Crown | CTF | Main event July 24-29, 2026; After Party July 31-August 2, 2026; no write-up supplied |
-| LearnPossible 2 CTF | CTF | Done; October 16, 2026; no write-up supplied |
-| Kaspersky{CTF} | CTF | Kaspersky{CTF}; August 28, 2026; past event |
+| LearnPossible 2 CTF | CTF | Participated; October 16, 2026; no write-up supplied |
+| Kaspersky{CTF} | CTF | Kaspersky{CTF}; August 28, 2026; Participated |
 | Cyber Apocalypse CTF 2026: The Salt Crown - Certificate of Participation | CTF event attachment | Shown inside the Cyber Apocalypse event; PDF at `public/assets/certifications/cyber-apocalypse-2026/certificate.pdf` |
 | CCNA: Enterprise Networking, Security, and Automation | Certificate | Cisco; September 2026; public PDF at `public/assets/certifications/ccna-enterprise-networking-security-automation/certificate.pdf` |
 
@@ -41,3 +41,5 @@ The current project card supports a title, category, description, tags, and a de
 2. Replace placeholder text in `src/content.js` and add approved files to the matching asset folders.
 3. Add image display where it improves the cards or detail views, and check mobile layouts.
 4. Validate the links and build, then review the finished sections before publishing.
+
+CTF status values are `Pending` and `Participated`. Unrecognized or missing statuses display as Pending. Certificate attachments use `certificate` for the original document and `certificateImage` for the image preview.

@@ -152,7 +152,7 @@ dialog h3 { font-size:var(--text-sm); margin-top:var(--space-5); }
 dialog p { color:var(--muted); font-size:var(--text-base); }
 .detail-image { display:block; width:100%; height:auto; margin-block:var(--space-4); border:1px solid var(--line); border-radius:var(--radius-sm); }
 dialog:has(.certificate-preview) { width:min(960px,calc(100% - 32px)); }
-.certificate-preview { display:block; width:100%; height:clamp(260px,55dvh,640px); margin-block:var(--space-4); border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--bg); }
+.certificate-preview { display:block; width:100%; height:auto; margin-block:var(--space-4); border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--bg); }
 #toast { position:fixed; bottom:var(--space-5); left:50%; z-index:50; max-width:90vw; padding:var(--space-3) var(--space-5); border-radius:var(--radius-sm); background:var(--text); color:var(--bg); font-size:var(--text-sm); opacity:0; visibility:hidden; transform:translate(-50%,8px); transition:opacity var(--transition-base),transform var(--transition-base),visibility var(--transition-base); }
 #toast.show { opacity:1; visibility:visible; transform:translate(-50%,0); }
 @media (max-width:1100px) {

@@ -28,15 +28,16 @@ window.PORTFOLIO = {
       title: 'Cyber Apocalypse CTF 2026: The Salt Crown',
       organizer: 'Hack The Box', category: 'CTF', status: 'Participated',
       date: 'July 24, 2026', url: '',
-      certificate: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf'
+      certificate: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf',
+      certificateImage: '/assets/certifications/cyber-apocalypse-2026/certificate.png'
     },
     {
       title: 'LearnPossible 2 CTF', organizer: 'Hexcore Labs PH',
-      category: 'CTF', status: 'Done', date: 'October 16, 2026', url: ''
+      category: 'CTF', status: 'Participated', date: 'October 16, 2026', url: ''
     },
     {
       title: 'Kaspersky{CTF}', organizer: 'Kaspersky{CTF}',
-      category: 'CTF', status: 'Past event', date: 'August 28, 2026', url: ''
+      category: 'CTF', status: 'Participated', date: 'August 28, 2026', url: ''
     }
   ],
   certifications: [

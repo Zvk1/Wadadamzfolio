@@ -18,8 +18,9 @@ The live entries for Projects, CTF, and Certifications are in [`src/content.js`]
 | review.mnl | Project | [Live site](https://review-mnl-gamma.vercel.app/); `public/assets/projects/review-mnl/screenshot.png` |
 | The Event Lab | Project | [Live site](https://theeventlabs.netlify.app/); `public/assets/projects/the-event-lab/screenshot.png`, `public/assets/projects/the-event-lab/landing-page.png` |
 | Cyber Apocalypse CTF 2026: The Salt Crown | CTF | Main event July 24-29, 2026; After Party July 31-August 2, 2026; no write-up supplied |
-| LearnPossible 2 CTF | CTF | Starts October 16, 2026; no write-up supplied |
-| Cyber Apocalypse CTF 2026: The Salt Crown - Certificate of Participation | Certificate | Public PDF at `public/assets/certifications/cyber-apocalypse-2026/certificate.pdf` |
+| LearnPossible 2 CTF | CTF | Done; October 16, 2026; no write-up supplied |
+| Kaspersky{CTF} | CTF | Kaspersky{CTF}; August 28, 2026; past event |
+| Cyber Apocalypse CTF 2026: The Salt Crown - Certificate of Participation | CTF event attachment | Shown inside the Cyber Apocalypse event; PDF at `public/assets/certifications/cyber-apocalypse-2026/certificate.pdf` |
 | CCNA: Enterprise Networking, Security, and Automation | Certificate | Cisco; September 2026; public PDF at `public/assets/certifications/ccna-enterprise-networking-security-automation/certificate.pdf` |
 
 Files under `public/` are publicly accessible when the site is deployed. Keep source files, private notes, and unredacted documents outside `public/`. Use lowercase, hyphenated names such as `dashboard-overview.webp` and `certificate.pdf`. Refer to a public file from the site as `/assets/projects/<project-slug>/dashboard-overview.webp`.

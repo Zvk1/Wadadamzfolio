@@ -27,20 +27,19 @@ window.PORTFOLIO = {
     {
       title: 'Cyber Apocalypse CTF 2026: The Salt Crown',
       organizer: 'Hack The Box', category: 'CTF', status: 'Participated',
-      date: 'July 24, 2026', url: ''
+      date: 'July 24, 2026', url: '',
+      certificate: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf'
     },
     {
       title: 'LearnPossible 2 CTF', organizer: 'Hexcore Labs PH',
-      category: 'CTF', status: 'Upcoming', date: 'October 16, 2026', url: ''
+      category: 'CTF', status: 'Done', date: 'October 16, 2026', url: ''
+    },
+    {
+      title: 'Kaspersky{CTF}', organizer: 'Kaspersky{CTF}',
+      category: 'CTF', status: 'Past event', date: 'August 28, 2026', url: ''
     }
   ],
   certifications: [
-    {
-      title: 'Cyber Apocalypse CTF 2026: The Salt Crown - Certificate of Participation',
-      issuer: 'Hack The Box', date: 'July 2026', status: 'Participation',
-      url: '/assets/certifications/cyber-apocalypse-2026/certificate.pdf',
-      linkLabel: 'View certificate'
-    },
     {
       title: 'CCNA: Enterprise Networking, Security, and Automation',
       issuer: 'Cisco', date: 'September 2026', status: 'Certification',
